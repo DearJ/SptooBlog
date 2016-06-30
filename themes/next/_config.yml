@@ -166,8 +166,9 @@ mathjax:
 # Swiftype Search API Key
 #swiftype_key:
 
+
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 264d0fc4f6db76fdb5e630019ceb7d4f
 
 # Duoshuo ShortName
 #duoshuo_shortname:

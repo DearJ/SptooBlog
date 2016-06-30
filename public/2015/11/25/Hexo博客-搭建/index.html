@@ -65,7 +65,12 @@
 <meta property="og:description" content="Hexo博客 偶然机会看到node.js博客，而只需要一个域名，太符合自己的要求，所以花了几天时间自己搭建了个，这里做个记录
 
 前言">
-<meta property="og:updated_time" content="2015-12-02T13:38:28.000Z">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/7a65bc01gw1eylq2f8lulj20yd0fe40o.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/7a65bc01gw1eylq4hf1lqj20xx0h9q5z.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/7a65bc01gw1eylq5oyrvhj20yd0h3acw.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/7a65bc01gw1eylq9me5w3j20gv0bgta9.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/7a65bc01gw1eylqcskxlcj20gv0bgjt5.jpg">
+<meta property="og:updated_time" content="2015-12-02T15:34:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客 - 搭建">
 <meta name="twitter:description" content="Hexo博客 偶然机会看到node.js博客，而只需要一个域名，太符合自己的要求，所以花了几天时间自己搭建了个，这里做个记录
@@ -92,6 +97,16 @@
   
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?264d0fc4f6db76fdb5e630019ceb7d4f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -275,14 +290,69 @@
 <blockquote>
 <p>搭建<strong>Hexo</strong>博客需要2个准备，一个是git，一个是node.js。git这块不多讲，在另外篇章来详细讲述。</p>
 </blockquote>
-<h3 id="git">git</h3><ol>
-<li>github上建立仓库</li>
-</ol>
+<h3 id="git">git</h3><p>github上建立仓库</p>
 <p>登录后系统，在github首页，点击页面右下角「New Repository」</p>
 <blockquote>
 <p>注：Github Pages的Repository名字是特定的，比如我Github账号是cnfeat，那么我Github Pages Repository名字就是cnfeat.github.io。</p>
 </blockquote>
 <p>点击「Create Repository」 完成创建。</p>
+<ul>
+<li>建立CNAME</li>
+</ul>
+<p>接下来到github仓库，点击右下角的「Download ZIP」，下载源文件，解压，找到CNAME文件，用记事本打开，将cnfeat.com修改成你的域名，放进Hexo\source目录下，用hexo命令提交上去。</p>
+<blockquote>
+<p>为之后的关联域名做准备</p>
+</blockquote>
+<pre><code>$ hexo <span class="keyword">d</span> -<span class="keyword">g</span>
+</code></pre><h3 id="node-js">node.js</h3><ul>
+<li><p>下载<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a>稳定版</p>
+</li>
+<li><p>cd到指定的文件夹 安装Hexo</p>
+</li>
+</ul>
+<blockquote>
+<p>-g 是全局 会加入到系统中 所有的文件都可以用</p>
+</blockquote>
+<pre><code>$ npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span>
+</code></pre><ul>
+<li>部署Hexo</li>
+</ul>
+<p>有必要时 sudo 用起来..</p>
+<pre><code><span class="variable">$ </span>hexo init
+</code></pre><p>Hexo随后会自动在目标文件夹建立网站所需要的所有文件。</p>
+<pre><code>hexo <span class="keyword">generate</span> （hexo <span class="keyword">g</span>  也可以）
+</code></pre><p>生成静态页面至hexo\public\目录。</p>
+<ul>
+<li><p>本地启动</p>
+<p>启动本地服务，进行文章预览调试，命令：</p>
+<p>   $ hexo server (hexo s也可以)</p>
+</li>
+</ul>
+<blockquote>
+<p>如果出现错误，运行一下命令, 生成本地服务</p>
+</blockquote>
+<pre><code>$  npm <span class="operator"><span class="keyword">install</span> hexo-<span class="keyword">server</span> <span class="comment">--save</span></span>
+</code></pre><p>这个时候再执行：<br>    $ hexo s</p>
+<p>得到:<br> INFO  Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="external">http://0.0.0.0:4000/</a>. Press Ctrl+C to stop.</p>
+<p> 浏览器输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>  可以看到效果</p>
+<h3 id="关联域名">关联域名</h3><ul>
+<li>首先买域名，再解析到DNSPod<br><img src="http://ww4.sinaimg.cn/large/7a65bc01gw1eylq2f8lulj20yd0fe40o.jpg" alt="tuian"></li>
+<li><p>在DNSPod里面配置github的ip和io<br><img src="http://ww4.sinaimg.cn/large/7a65bc01gw1eylq4hf1lqj20xx0h9q5z.jpg" alt="ndspod"><br><img src="http://ww4.sinaimg.cn/large/7a65bc01gw1eylq5oyrvhj20yd0h3acw.jpg" alt="pdo"></p>
+<ul>
+<li>在你指定的文件夹里修改_config.yml<br><img src="http://ww1.sinaimg.cn/large/7a65bc01gw1eylq9me5w3j20gv0bgta9.jpg" alt="url"></li>
+</ul>
+<p>接下来可以定位到你指定文件夹输入下面的代码查看效果</p>
+<p>   $ hexo g<br>   $ hexo s<br>在浏览器0.0.0.0可以看到</p>
+</li>
+</ul>
+<h3 id="推送到远程">推送到远程</h3><p>输入下面代码</p>
+<pre><code><span class="variable">$ </span>hexo d
+</code></pre><p>如果没有效果，在指定的文件夹下面_config.yml修改<br><img src="http://ww3.sinaimg.cn/large/7a65bc01gw1eylqcskxlcj20gv0bgjt5.jpg" alt="config"></p>
+<p>再如果下面代码看效果</p>
+<pre><code>$ hexo <span class="keyword">d</span> -<span class="keyword">g</span>
+</code></pre><blockquote>
+<p>搭建博客总共也就这么多，以后会更新主题的一些细节</p>
+</blockquote>
 
       
     </div>
@@ -378,21 +448,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -458,7 +528,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git"><span class="nav-number">1.2.</span> <span class="nav-text">git</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git"><span class="nav-number">1.2.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node-js"><span class="nav-number">1.3.</span> <span class="nav-text">node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联域名"><span class="nav-number">1.4.</span> <span class="nav-text">关联域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送到远程"><span class="nav-number">1.5.</span> <span class="nav-text">推送到远程</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -480,7 +550,7 @@
         <div class="copyright" >
   
   &copy;  2013 - 
-  <span itemprop="copyrightYear">2015</span>
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
